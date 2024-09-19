@@ -26,9 +26,9 @@ Lexigen addresses this challenge by providing an intuitive and powerful tool for
 
 ## Demo
 
-- **Vercel:** Vercel
+- **Vercel:** [https://lexigen.vercel.app/](https://lexigen.vercel.app/)
 
-- **Netlify:** Netlify
+- **Netlify:** [https://lexigen.netlify.app/](https://lexigen.netlify.app/)
 
 ## Getting Started
 
