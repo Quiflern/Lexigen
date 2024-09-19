@@ -1,0 +1,45 @@
+// Define the client generator for Prisma
+generator client {
+  provider = "prisma-client-js" // Generates Prisma Client for JavaScript/TypeScript
+}
+
+// Define the datasource configuration for PostgreSQL
+datasource prismadb {
+  provider = "postgresql" // Database provider
+  url      = env("DATABASE_URL") // Connection URL from environment variable
+}
+
+// Model for storing Gemini output
+model GeminiOutput {
+  id           String   @id @default(uuid()) // Unique identifier
+  userId       String // User ID associated with this output
+  title        String? // Optional title of the output
+  description  String // Description of the output
+  templateUsed String // Template used for the output
+  createdAt    DateTime @default(now()) // Timestamp of creation
+}
+
+// Model for storing purchase records
+model Purchase {
+  id       String   @id @default(uuid()) // Unique identifier
+  userId   String // User ID associated with this purchase
+  credit   Float // Amount of credit involved in the purchase
+  createAt DateTime @default(now()) // Timestamp of creation
+}
+
+// Model for storing Stripe customer information
+model StripeCustomer {
+  id               String @id @default(uuid()) // Unique identifier
+  userId           String @unique // User ID associated with this Stripe customer
+  stripeCustomerId String @unique // Stripe customer ID
+
+  createAt DateTime @default(now()) // Timestamp of creation
+}
+
+// Model for storing user information
+model User {
+  id     String @id @unique @default(uuid()) // Unique identifier
+  userId String @unique // Unique user ID
+
+  totalCredit Float @default(10000) // Total credit associated with the user
+}

@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Main container styling */
+.custom-quill-container {
+  border: 0.5px solid rgb(0, 255, 247, 0.5); /* Border color and opacity */
+  border-radius: 4px; /* Rounded corners */
+  overflow: hidden; /* Ensures content doesn't overflow */
+}
+
+/* Remove default border from Quill */
+.custom-quill {
+  border: none !important;
+}
+
+/* Toolbar styling */
+.custom-quill .ql-toolbar {
+  border: none !important;
+  border-bottom: 1px solid rgb(0, 255, 247, 0.4) !important; /* Bottom border for toolbar */
+  background-color: transparent;
+}
+
+/* Icon color in toolbar */
+.custom-quill .ql-toolbar .ql-stroke {
+  stroke: #00fff7 !important; /* Color for stroke-based icons */
+}
+
+.custom-quill .ql-toolbar .ql-fill {
+  fill: #00fff7 !important; /* Color for fill-based icons */
+}
+
+.custom-quill .ql-toolbar .ql-picker {
+  color: #00fff7 !important; /* Text color for pickers (e.g., font size) */
+}
+
+/* Hover and focus styles for toolbar items */
+.custom-quill .ql-toolbar button:hover,
+.custom-quill .ql-toolbar button:focus,
+.custom-quill .ql-toolbar .ql-picker-label:hover,
+.custom-quill .ql-toolbar .ql-picker-item:hover {
+  background-color: rgba(
+    0,
+    255,
+    247,
+    0.4
+  ) !important; /* Background color on hover/focus */
+}
+
+/* Active state for toolbar items */
+.custom-quill .ql-toolbar button.ql-active,
+.custom-quill .ql-toolbar .ql-picker-label.ql-active,
+.custom-quill .ql-toolbar .ql-picker-item.ql-selected {
+  background-color: rgba(
+    0,
+    255,
+    247,
+    0.6
+  ) !important; /* Background color for active state */
+}
+
+/* Icon color changes on hover/focus/active states */
+.custom-quill .ql-toolbar button:hover .ql-stroke,
+.custom-quill .ql-toolbar button:focus .ql-stroke,
+.custom-quill .ql-toolbar .ql-picker-label:hover .ql-stroke,
+.custom-quill .ql-toolbar .ql-picker-label.ql-active .ql-stroke,
+.custom-quill .ql-toolbar .ql-picker-item:hover .ql-stroke,
+.custom-quill .ql-toolbar .ql-picker-item.ql-selected .ql-stroke {
+  stroke: currentColor !important; /* Stroke color for icons on hover/focus/active */
+}
+
+.custom-quill .ql-toolbar button:hover .ql-fill,
+.custom-quill .ql-toolbar button:focus .ql-fill,
+.custom-quill .ql-toolbar .ql-picker-label:hover .ql-fill,
+.custom-quill .ql-toolbar .ql-picker-label.ql-active .ql-fill,
+.custom-quill .ql-toolbar .ql-picker-item:hover .ql-fill,
+.custom-quill .ql-toolbar .ql-picker-item.ql-selected .ql-fill {
+  fill: currentColor !important; /* Fill color for icons on hover/focus/active */
+}
+
+/* Editor text styling */
+.custom-quill .ql-editor {
+  font-size: 16px;
+  color: #00fff7; /* Text color in the editor */
+}
+
+.custom-quill .ql-editor:focus {
+  outline: none; /* Remove focus outline */
+}
+
+/* Color picker styling */
+.custom-quill .ql-color-picker .ql-picker-options {
+  padding: 3px 5px;
+  width: 152px; /* Width of the color picker dropdown */
+}
+
+.custom-quill .ql-color-picker .ql-picker-options .ql-picker-item {
+  border: 1px solid transparent;
+  margin: 2px;
+}
+
+.custom-quill .ql-color-picker .ql-picker-options .ql-picker-item.ql-selected,
+.custom-quill .ql-color-picker .ql-picker-options .ql-picker-item:hover {
+  border-color: #00fff7; /* Border color for selected/hovered color items */
+}
+
+/* Dropdown menu styling */
+.custom-quill .ql-picker.ql-expanded .ql-picker-options {
+  border: 1px solid rgb(0, 255, 247, 0.5); /* Border for expanded dropdown */
+  background-color: #11121d; /* Background color of dropdown */
+  border-radius: 8px; /* Rounded corners for dropdown */
+  overflow: hidden;
+}
+
+.custom-quill .ql-picker.ql-expanded .ql-picker-label {
+  border-color: rgb(
+    0,
+    255,
+    247,
+    0.5
+  ); /* Border color for expanded dropdown label */
+}
+
+/* Toolbar spacing */
+.custom-quill .ql-toolbar.ql-snow {
+  padding: 8px; /* Padding around the toolbar */
+}
+
+/* Remove border from the editing area */
+.custom-quill .ql-container.ql-snow {
+  border: none;
+}
+
+/* Dropdown item styling */
+.custom-quill .ql-picker-options .ql-picker-item {
+  color: #00fff7; /* Text color for dropdown items */
+}
+
+/* Dropdown icon color change on hover */
+.custom-quill .ql-picker:not(.ql-color-picker):not(.ql-icon-picker) svg:hover {
+  color: aqua !important;
+}
+
+/* Active option color change */
+.custom-quill .ql-picker.ql-expanded .ql-picker-label,
+.custom-quill .ql-picker-options .ql-picker-item.ql-selected {
+  color: aqua !important;
+  background-color: rgba(0, 255, 247, 0.4) !important;
+}
+
+/* Hover color change for dropdown options */
+.custom-quill .ql-picker-options .ql-picker-item:hover {
+  color: aqua !important;
+  background-color: rgba(
+    0,
+    255,
+    247,
+    0.2
+  ) !important; /* Light pink background */
+}
+
+/* Dropdown text color */
+.custom-quill .ql-picker-label:hover,
+.custom-quill .ql-picker.ql-expanded .ql-picker-label {
+  color: aqua !important;
+}
+
+/* Toolbar separator styling */
+.custom-quill .ql-formats {
+  border-right: 1px solid rgba(0, 255, 247, 0.1); /* Separator between toolbar sections */
+  margin-right: 5px;
+  padding-right: 5px;
+}
+
+.custom-quill .ql-formats:last-child {
+  border-right: none; /* Remove right border from last toolbar section */
+}
