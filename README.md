@@ -28,8 +28,6 @@ Lexigen addresses this challenge by providing an intuitive and powerful tool for
 
 - **Vercel:** [https://lexigen.vercel.app/](https://lexigen.vercel.app/)
 
-- **Netlify:** [https://lexigen.netlify.app/](https://lexigen.netlify.app/)
-
 ## Getting Started
 
 1.  **Clone the repository:**
