@@ -1,5 +1,7 @@
 # Lexigen: The AI-Powered Social Media Content Generator
 
+![lexigen](https://github.com/user-attachments/assets/0723a3ff-d6e6-49af-87bd-b226c1d44d2a)
+
 ## Introduction
 
 Creating engaging and effective content for social media platforms is time-consuming and challenging. Manually crafting captions, hashtags, and even video ideas requires significant effort and expertise, often leading to frustration and inconsistent results. Additionally, staying ahead of platform trends and effectively leveraging AI tools for content creation is a constant struggle for marketers and content creators.
