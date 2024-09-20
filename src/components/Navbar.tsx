@@ -36,6 +36,12 @@ export default function Navbar() {
             >
               Features
             </Link>
+            <Link
+              href="/dashboard"
+              className="text-lg font-semibold text-aqua hover:text-aqua/70 transition duration-300"
+            >
+              Dashboard
+            </Link>
             <ClerkAuth />
           </nav>
 

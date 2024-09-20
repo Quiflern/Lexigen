@@ -4,6 +4,8 @@ import { cn } from "@/lib/utils";
 import { RiAiGenerate } from "react-icons/ri";
 import { FaHistory } from "react-icons/fa";
 import { FaWallet } from "react-icons/fa6";
+import { TbMoodKid } from "react-icons/tb";
+import { MdOutlineSummarize } from "react-icons/md";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -14,9 +16,19 @@ import logo from "@/assets/logo.png";
 // Define the menu items for the sidebar
 const menuList = [
   {
-    name: "Generator",
+    name: "Social Generator",
     icon: RiAiGenerate,
     path: "/dashboard",
+  },
+  {
+    name: "Summarizer",
+    icon: MdOutlineSummarize,
+    path: "/dashboard/summarizer",
+  },
+  {
+    name: "Kids Story Generator",
+    icon: TbMoodKid,
+    path: "/dashboard/story-generator",
   },
   {
     name: "Recent Generations",
